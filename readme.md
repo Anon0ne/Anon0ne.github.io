@@ -12,10 +12,14 @@ In repository Settings → Pages, select Deploy from a branch, branch master, fo
 
 - index.html: copy, project links, and image captions.
 - style.css: responsive layout and colors.
-- script.js: screenshot dialog and footer year.
+- script.js: screenshot dialog, footer year, and contact email draft.
 - assets/: original screenshots from the project repositories and the site favicon.
 
 Relative asset paths support GitHub Pages without configuration. Screenshot previews contain illustrative/synthetic data and are labeled accordingly.
+
+## Contact and Element invites
+
+The contact form addresses Justin@bizhostnc.com and defaults its subject to “Request an invite to our Element server.” Visitors can edit the subject for other questions. JavaScript URL-encodes the subject and message into a mailto draft; the visitor must send it in their configured email app. The form does not send email from GitHub Pages or collect submissions in a database. A direct email link is provided as a fallback. No email credentials or third-party form service are used.
 
 ## Screenshot sources
 

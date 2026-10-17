@@ -17,3 +17,15 @@ dialog.addEventListener('click', event => {
 });
 dialog.addEventListener('close', () => document.body.classList.remove('no-dialog-scroll'));
 document.querySelector('#year').textContent = new Date().getFullYear();
+
+const contactForm = document.querySelector('#contact-form');
+contactForm.addEventListener('submit', event => {
+  event.preventDefault();
+  if (!contactForm.reportValidity()) return;
+  const values = new FormData(contactForm);
+  // Keep the subject on one line; all visitor text stays in the email draft.
+  const subject = values.get('subject').trim().replace(/[\r\n]/g, ' ');
+  const body = `Name: ${values.get('name').trim()}\r\nEmail: ${values.get('email').trim()}\r\n\r\n${values.get('message').trim()}`;
+  window.location.href = `mailto:Justin@bizhostnc.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  document.querySelector('#contact-status').textContent = 'Your email app should open with a draft. Review it and press Send. If it does not open, email Justin@bizhostnc.com directly.';
+});
